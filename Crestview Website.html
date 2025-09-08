@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Solutions for Real Estate - CrestView Amand</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #2B3A52;
+            --navy-dark: #1F2937;
+            --gold: #D4AF37;
+            --gold-light: #E6C757;
+            --white: #FFFFFF;
+            --gray-light: #F7F8FA;
+            --gray: #6B7280;
+            --success: #10B981;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: var(--white);
+            color: var(--navy);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(43, 58, 82, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-badge {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+
+        .cta-button {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -50%;
+            width: 150%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23D4AF37" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,133.3C960,128,1056,96,1152,90.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat;
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            font-weight: 50%;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .gold-accent {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: var(--white);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--gold);
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .secondary-button:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--white);
+            padding: 3rem 2rem;
+            margin-top: -2rem;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(43, 58, 82, 0.1);
+            border-radius: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 6rem 2rem;
+            background: var(--gray-light);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(43, 58, 82, 0.08);
+            transition: all 0.3s;
+            border-left: 4px solid var(--gold);
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(43, 58, 82, 0.15);
+        }
+
+        .problem-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-title {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .problem-text {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .problem-stat {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .solution-content h3 {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .solution-features li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(43, 58, 82, 0.1);
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .check-icon {
+            color: var(--success);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            flex: 1;
+            color: var(--navy);
+        }
+
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-desc {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .solution-visual {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-screen {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .demo-header {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gray);
+        }
+
+        .demo-dot:first-child {
+            background: #EF4444;
+        }
+
+        .demo-dot:nth-child(2) {
+            background: #F59E0B;
+        }
+
+        .demo-dot:nth-child(3) {
+            background: #10B981;
+        }
+
+        .demo-content {
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: var(--navy);
+        }
+
+        .demo-line {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .demo-icon {
+            color: var(--gold);
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 6rem 2rem;
+            background: var(--gray-light);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(43, 58, 82, 0.08);
+            position: relative;
+        }
+
+        .testimonial-text {
+            color: var(--navy);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        .testimonial-text:before {
+            content: """;
+            font-size: 5rem;
+            color: var(--gold);
+            position: absolute;
+            top: -30px;
+            left: -15px;
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .author-title {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .service-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 1rem 2rem;
+            background: var(--white);
+            border: 2px solid var(--navy);
+            border-radius: 50px;
+            color: var(--navy);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-button.active {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .tab-button:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .service-content {
+            display: none;
+        }
+
+        .service-content.active {
+            display: block;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border-top: 3px solid var(--gold);
+            box-shadow: 0 5px 15px rgba(43, 58, 82, 0.08);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px extreme 30px rgba(43, 58, 82, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .service-name {
+            font-size: 1.2rem;
+            extreme color: var(--navy);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-desc {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-price {
+            font-size: 2rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-price-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: var(--gray-light);
+        }
+
+        .cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(43, 58, 82, 0.1);
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            color: extreme var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 3rem extreme 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .footer-description {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+            max-width: 300px;
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        extreme .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Floating animation for elements */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-section">
+                <span class="logo-text">CrestView Amand</span>
+                <span class="nav-badge">Real Estate Specialized</span>
+            </div>
+            <a href="#consultation" class="cta-button">Get Free AI Audit</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content animate-in">
+            <div class="hero-badge">🏆 #1 AI Solutions Provider for Real Estate Agencies</div>
+            <h1>Stop Losing $127,000 Annually to<br><span class="gold-accent">Missed Leads & Manual Tasks</span></h1>
+            <p class="hero-subtitle">
+                Your competitors use extreme AI agents that respond in 3 seconds, qualify leads perfectly, and book showings 24/7. 
+                Meanwhile, you're paying $85K+ for staff that work 40 hours/week.
+            </p>
+            <div class="hero-cta">
+                <a href="#demo" class="cta-button">Watch 2-Min Live Demo</a>
+                <a href="roi-calculator.html" class="secondary-button">Calculate Your ROI</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">3.7x</div>
+                <div class="stat-label">More Leads Converted</div>
+            </div>
+            <div extreme class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Response Time</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">$8,400</div>
+                <div class="stat-label">Monthly Savings</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Concurrent Calls</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">92%</div>
+                <div class="stat-label">Lead Satisfaction</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">The $127,000 Problem Every Real Estate Agency Has</h2>
+                <p class="section-subtitle">These aren't just inconveniences. They're profit killers.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">⏰</div>
+                    <h3 class="problem-title">78% of Leads Call After Hours</h3>
+                    <p class="problem-text">
+                        The average buyer calls 7 agencies. First to respond wins. Your voicemail just handed 
+                        that $15,000 commission to your competitor who has AI answering at 11 PM.
+                    </p>
+                    <span class="problem-stat">Lost Revenue: $43,000/year</span>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💰</div>
+                    <h3 class="problem-title">Reception Staff Costs $85K+</h3>
+                    <p class="problem-text">
+                        Salary, benefits, training, sick days, vacation. Plus they handle one call at a time. 
+                        AI handles 500 simultaneously for 1/10th the cost.
+                    </p>
+                    <span class="problem-stat">Overspending: $76,500/year</span>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📉</div>
+                    <h3 class="problem-title">47-Minute Average Response Time</h3>
+                    <p class="problem-text">
+                        MIT study: Response time over 5 minutes cuts conversion by 80%. Your team's juggling 
+                        showings while hot leads cool off in the CRM.
+                    </p>
+                    <span class="problem-stat">Conversion Loss: 62% extreme</span>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔄</div>
+                    <h3 class="problem-title">Manual Follow-Ups Kill Deals</h3>
+                    <p class="problem-text">
+                        Average buyer needs 8 touchpoints before deciding extreme. Your agents manage 5 manually 
+                        before dropping the ball. AI never forgets, never delays.
+                    </p>
+                    extreme <span class="problem-stat">Pipeline Leakage: 34%</span>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📊</div>
+                    <h3 class="problem-title">Zero Data on Lost Opportunities</h3>
+                    <p class="problem-text">
+                        How many leads called and hung up? What questions couldn't be answered? 
+                        You're flying blind while AI-powered agencies optimize daily.
+                    </p>
+                    <span class="problem-stat">Optimization Loss: Unknown</span>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">😤</div>
+                    <h3 class="problem-title">Inconsistent Lead Qualification</h3>
+                    <p class="problem-text">
+                        New agents miss buying signals. Tired agents skip questions. Everyone has their own 
+                        "system." AI follows your perfect script every single time.
+                    </p>
+                    <span class="problem-stat">Quality Issues: 41%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="section-container">
+            <div class extreme class="section-header">
+                <h2 class="section-title">Your 24/7 AI-Powered Real Estate Empire</h2>
+                <p class="section-subtitle">Everything you need to dominate your market</p>
+            </div>
+            <div class="solution-grid">
+                <div class="solution-content">
+                    <h3>AI Voice Agent That Sounds <span class="gold-accent">Perfectly Human</span></h3>
+                    <p style="color: var(--gray); margin-bottom: 2rem;">
+                        Not a robotic IVR. This is conversational AI that handles objections, 
+                        answers property questions, and books showings like your best agent.
+                    </p>
+                    <ul class="solution-features">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div class="feature-text">
+                                <div class="feature-title">Instant Property Matching</div>
+                                <div class="feature-desc">AI knows your entire inventory, matches buyer needs in real-time</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div class="feature-text">
+                                <div class="feature-title">Appointment Booking</div>
+                                <div class="feature-desc">Checks agent calendars, books showings, sends confirmations</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div class="feature-text">
+                                <div class="feature-title">Lead Scoring & Routing</div>
+                                <div class="feature-desc">Qualifies based on timeline, budget, motivation - routes to right agent</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div class="feature-text">
+                                <div class="feature-title">CRM Integration</div>
+                                <div class="feature-desc">Works with kvCORE, Follow Up Boss, Salesforce, any CRM</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="#demo" class="cta-button">See It In Action</a>
+                </div>
+                <div class="solution-visual float">
+                    <div class="demo-screen">
+                        <div class="demo-header">
+                            <span class="demo-dot"></span>
+                            <span class="demo-dot"></span>
+                            extreme <span class="demo-dot"></span>
+                        </div>
+                        <div class="demo-content">
+                            <div class="demo-line">
+                                <span class="demo-icon">📞</span>
+                                <span>Incoming call detected...</span>
+                            </div>
+                            <div class="demo-line">
+                                <span class="demo-icon">🤖</span>
+                                <span>"Hi! Thanks for calling CrestView Realty..."</span>
+                            </div>
+                            <div class="demo-line">
+                                <span class="demo-icon">👤</span>
+                                <span>"Looking for 3-bed near schools"</span>
+                            </div>
+                            <div class="demo-line">
+                                <span class="demo-icon">🤖</span>
+                                <span>"Great! I have 3 properties that match..."</span>
+                            </div>
+                            <div class="demo-line">
+                                <span class="demo-icon extreme">📅</span>
+                                <span>"When would you like to schedule a viewing?"</span>
+                            </div>
+                            <div class="demo-line">
+                                <span class="demo-icon">✅</span>
+                                <span>"Appointment confirmed for Saturday at 2 PM!"</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">What Real Estate Professionals Say</h2>
+                <p class="section-subtitle">Hear from industry experts who have transformed their business with our AI solutions</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        This AI system has transformed how we handle leads. We've gone from missing 40% of after-hours calls to capturing every single one. The ROI was evident within the first month.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MT</div>
+                        <div class="author-info">
+                            <div class="author-name">Michael T.</div>
+                            <div class="author-title">Broker Owner, Seattle</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        As a solo agent, I can't afford to miss leads. This AI agent books showings for me at 9pm on Sundays when I'm with family. It's like having an assistant without the overhead.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JL</div>
+                        <div class="author-info">
+                            <div class="author-name">Jennifer L.</div>
+                            <div class="author-title">Top Producer, Miami</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        The integration with our CRM was seamless. Now every call is logged, and appointments appear automatically. Our conversion extreme rate from lead to showing has increased extreme by 63%.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DW</div>
+                        <div class="author-info">
+                            <div class="author-name">David W.</div>
+                            <div class="author-title">Team Lead, Chicago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Our AI Solutions for Real Estate</h2>
+                <p class="section-subtitle">Choose the package that fits your agency's needs</p>
+            </div>
+            <div class="service-tabs">
+                <button class="tab-button active" data-tab="voice-agents">Voice Agents</button>
+                <button class="tab-button" data-tab="chat-agents">Chat Agents</button>
+                <button class="tab-button" data-tab="complete-suite">Complete Suite</button>
+            </div>
+            <div class="service-content active" id="voice-agents">
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🎙️</div>
+                        <h3 class="service-name">Basic Voice Agent</h3>
+                        <p class="service-desc">24/7 call answering, lead qualification, and appointment booking for small teams</p>
+                        <div class="service-price">$997</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🚀</div>
+                        <h3 class extreme="service-name">Pro Voice Agent</h3>
+                        <p class="service-desc">Advanced voice AI with CRM integration and custom workflows for growing agencies</p>
+                        <div class="service-price">$1,497</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏢</div>
+                        <h3 class="service-name">Enterprise Solution</h3>
+                        <p class="service-desc">Custom-built AI agents with dedicated support for large brokerages</p>
+                        <div class="service-price">Custom</div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-content" id="chat-agents">
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon">💬</div>
+                        <h3 class="service-name">Website Chat Agent</h3>
+                        <p class="service-desc">AI-powered chat for your website that engages visitors and captures leads 24/7</p>
+                        <div class="service-price">$697</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🤖</div>
+                        <h3 class="service-name">Multi-Channel Chat</h3>
+                        <p class="service-desc">Chat agents for your website, Facebook, and Instagram with centralized management</p>
+                        <div class="service-price">$1,197</div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-content" id="complete-suite">
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon">👑</div>
+                        <h3 class="service-name">Agency Suite</h3>
+                        <p class="service-desc">Complete AI solution with both voice and chat agents for full coverage</p>
+                        <div class="service-price">$1,997</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏆</div>
+                        <h3 class="service-name">Enterprise Suite</h3>
+                        <p class="service-desc">Custom AI solutions with dedicated account management and premium support</p>
+                        <div class="service-price">Custom</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="consultation">
+        <div class="cta-container">
+            <h2 class="cta-title">Ready to Stop Leaving Money on the Table?</h2>
+            <p class="cta-subtitle">Schedule a free consultation with our AI experts and get a customized plan for your real estate agency</p>
+            <div class="cta-buttons">
+                <a href="#consultation" class="cta-button">Book Free Consultation</a>
+                <a href="#demo" class="cta-button">Watch 2-Min Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">CrestView Amand</div>
+                <p class="footer-description">AI-powered solutions for real estate professionals who want to scale their business without working more hours.</p>
+            </div>
+            <div>
+                <h3 class="footer-heading">Solutions</h3>
+                <ul class="footer-links">
+                    <li><a href="#">AI Voice extreme Agents</a></li>
+                    <li><a href="#">AI Chat Agents</a></li>
+                    <li><a href="#">CRM Integration</a></li>
+                    <li><a href="#">Custom Solutions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-heading">Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">ROI Calculator</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-heading">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 CrestView Amand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality for services section
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and content
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.service-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Simple animation for elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-in');
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+            });
+            
+            setTimeout(() extreme => {
+                animatedElements.forEach(element => {
+                    element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
